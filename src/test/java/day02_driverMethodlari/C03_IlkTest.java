@@ -11,8 +11,8 @@ public class C03_IlkTest {
             4- sayfayi kapatin
          */
 
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
-        WebDriver driver= new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "src/resources/drivers/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
         // 1- https://www.amazon.com url'ine gidin
@@ -20,20 +20,20 @@ public class C03_IlkTest {
 
         //            2- Basligin Amazon kelimesi icerdigini test edin
         String actualTitle = driver.getTitle();
-        String arananKelime="Amazon";
-        if (actualTitle.contains(arananKelime)){
+        String arananKelime = "Amazon";
+        if (actualTitle.contains(arananKelime)) {
             System.out.println("Title testi PASSED");
         } else {
-            System.out.println("Title "+ arananKelime + "'yi icermiyor, title testi FAILED");
+            System.out.println("Title " + arananKelime + "'yi icermiyor, title testi FAILED");
         }
 
         //            3- Url'in "https://www.amazon.com" a esit oldugunu test edin
-        String actualUrl= driver.getCurrentUrl();
-        String expectedUrl="https://www.amazon.com";
-        if(actualUrl.equals(expectedUrl)){
+        String actualUrl = driver.getCurrentUrl();
+        String expectedUrl = "https://www.amazon.com";
+        if (actualUrl.equals(expectedUrl)) {
             System.out.println("Url testi PASSED");
-        }else{
-            System.out.println("actual Url:"+actualUrl+" beklenen URL'den farkli, test FAILED");
+        } else {
+            System.out.println("actual Url:" + actualUrl + " beklenen URL'den farkli, test FAILED");
         }
 
         //            4- sayfayi kapatin
